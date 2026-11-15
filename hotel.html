@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Les Chambres d'Essai — site de démonstration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="hotel">
+  <div class="demo-bar">
+    Site <strong>fictif</strong> de démonstration du widget HL Booking Pro. Les réservations faites ici sont enregistrées pour de vrai dans le compte de test.
+    <a href="essai.html">Page d'essai</a>
+  </div>
+
+  <nav class="nav">
+    <a class="brand" href="index.html">La Table d'Essai</a>
+    <div class="nav-links">
+      <a href="index.html">Restaurant</a>
+      <a href="hotel.html" aria-current="page">Nos chambres</a>
+      <a href="#sejour">Réserver un séjour</a>
+    </div>
+    <button class="btn" type="button" data-hl-booking-open="hotel">Réserver une chambre</button>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1>Des chambres calmes, au-dessus du restaurant.</h1>
+      <p>Hôtel imaginaire créé pour tester la réservation de séjours : dates d'arrivée et de départ, nombre de personnes, choix de la chambre.</p>
+      <div class="actions">
+        <a class="btn" href="#sejour">Voir les disponibilités</a>
+        <button class="btn ghost" type="button" data-hl-booking-open="hotel">Ouvrir en fenêtre</button>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">Chambres &amp; petit-déjeuner</div>
+  </header>
+
+  <section class="block">
+    <h2>Nos chambres</h2>
+    <div class="grid3">
+      <div class="card"><h3>Chambre double</h3><p>Lit 160, salle d'eau, vue sur la place.</p></div>
+      <div class="card"><h3>Chambre familiale</h3><p>Un lit double et deux lits simples.</p></div>
+      <div class="card"><h3>Suite</h3><p>Coin salon, baignoire, vue jardin.</p></div>
+    </div>
+    <p class="note" style="margin-top:16px"><strong>Important :</strong> le module n'affiche que les chambres créées dans HL Booking Pro &gt; Hôtel &gt; Chambres. Tant qu'aucune chambre n'existe, aucune disponibilité ne s'affiche.</p>
+  </section>
+
+  <section class="block" id="sejour">
+    <div class="booking">
+      <div>
+        <h2>Réserver un séjour</h2>
+        <dl class="info">
+          <dt>Arrivée</dt><dd>À partir de 15 h</dd>
+          <dt>Départ</dt><dd>Avant 11 h</dd>
+        </dl>
+      </div>
+      <div class="widget-box"><div id="hl-booking-widget"></div></div>
+    </div>
+  </section>
+
+  <footer>Établissement fictif · Réservation propulsée par HL Booking Pro</footer>
+
+  <script src="config.js"></script>
+  <script>loadHLWidget({ mode: "hotel" });</script>
+</body>
+</html>

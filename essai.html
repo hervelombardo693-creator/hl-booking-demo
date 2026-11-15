@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Page d'essai du widget — HL Booking Pro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="lab">
+  <div class="demo-bar">Page d'essai : choisissez l'établissement et les options, puis testez le widget tel qu'il apparaîtrait sur un site client.</div>
+  <nav class="nav">
+    <a class="brand" href="index.html">Essais HL Booking Pro</a>
+    <div class="nav-links"><a href="index.html">Démo restaurant</a><a href="hotel.html">Démo hôtel</a><a href="essai.html" aria-current="page">Page d'essai</a></div>
+  </nav>
+  <main>
+    <form method="get">
+      <label>Identifiant de l'établissement
+        <input name="id" id="f-id" placeholder="identifiant (Widget de réservation)" />
+      </label>
+      <label>Module
+        <select name="mode" id="f-mode">
+          <option value="auto">Automatique</option>
+          <option value="restaurant">Restaurant</option>
+          <option value="hotel">Hôtel</option>
+        </select>
+      </label>
+      <label>Affichage
+        <select name="display" id="f-display">
+          <option value="inline">Dans la page</option>
+          <option value="button">Bouton flottant</option>
+        </select>
+      </label>
+      <button class="btn" type="submit">Appliquer</button>
+    </form>
+
+    <p class="note">Établissement testé : <code id="current-id"></code>. Le widget se charge depuis <code id="current-app"></code>. Un bouton de votre site peut aussi ouvrir le module :
+      <button class="btn" type="button" data-hl-booking-open style="margin-left:8px">Réserver</button>
+    </p>
+
+    <div class="widget-box" style="margin-top:16px"><div id="hl-booking-widget"></div></div>
+  </main>
+
+  <script src="config.js"></script>
+  <script>
+    (function () {
+      var p = new URLSearchParams(location.search);
+      var id = p.get("id") || HL_DEMO.establishment;
+      var mode = p.get("mode") || "auto";
+      var display = p.get("display") || "inline";
+      document.getElementById("f-id").value = id;
+      document.getElementById("f-mode").value = mode;
+      document.getElementById("f-display").value = display;
+      document.getElementById("current-id").textContent = id;
+      document.getElementById("current-app").textContent = HL_DEMO.appUrl;
+      if (display === "button") document.getElementById("hl-booking-widget").parentNode.style.display = "none";
+      loadHLWidget({ mode: mode, display: display });
+    })();
+  </script>
+</body>
+</html>

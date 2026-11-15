@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>La Table d'Essai — site de démonstration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="demo-bar">
+    Site <strong>fictif</strong> de démonstration du widget HL Booking Pro. Les réservations faites ici sont enregistrées pour de vrai dans le compte de test.
+    <a href="essai.html">Page d'essai</a>
+  </div>
+
+  <nav class="nav">
+    <a class="brand" href="index.html">La Table d'Essai</a>
+    <div class="nav-links">
+      <a href="index.html" aria-current="page">Restaurant</a>
+      <a href="#carte">La carte</a>
+      <a href="#reserver">Réserver</a>
+      <a href="hotel.html">Nos chambres</a>
+    </div>
+    <button class="btn" type="button" data-hl-booking-open="restaurant">Réserver une table</button>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1>Une cuisine de saison, au cœur du village.</h1>
+      <p>Restaurant imaginaire créé pour tester la réservation en ligne : choisissez une date, un horaire et le nombre de couverts, exactement comme le ferait un client.</p>
+      <div class="actions">
+        <a class="btn" href="#reserver">Réserver en ligne</a>
+        <button class="btn ghost" type="button" data-hl-booking-open="restaurant">Ouvrir en fenêtre</button>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">Déjeuner &amp; dîner<br />du mardi au samedi</div>
+  </header>
+
+  <section class="block" id="carte">
+    <h2>La carte du moment</h2>
+    <div class="grid3">
+      <div class="card"><h3>Entrées</h3><p>Velouté de potimarron, œuf parfait, noisettes torréfiées.</p><p class="price">12 €</p></div>
+      <div class="card"><h3>Plats</h3><p>Filet de lieu jaune, beurre blanc, légumes racines rôtis.</p><p class="price">24 €</p></div>
+      <div class="card"><h3>Desserts</h3><p>Tarte fine aux pommes, caramel au beurre salé.</p><p class="price">9 €</p></div>
+    </div>
+  </section>
+
+  <section class="block" id="reserver">
+    <div class="booking">
+      <div>
+        <h2>Réserver une table</h2>
+        <dl class="info">
+          <dt>Horaires</dt><dd>Mardi au samedi · 12 h – 14 h 30 et 19 h – 22 h 30</dd>
+          <dt>Adresse</dt><dd>Adresse fictive (site de démonstration)</dd>
+        </dl>
+        <p class="note"><strong>Pour vos essais :</strong> la confirmation est envoyée à l'adresse e-mail saisie. Utilisez la vôtre, puis retrouvez la réservation dans HL Booking Pro &gt; Restaurant.</p>
+      </div>
+      <div class="widget-box"><div id="hl-booking-widget"></div></div>
+    </div>
+  </section>
+
+  <footer>La Table d'Essai est un établissement fictif · Réservation propulsée par HL Booking Pro</footer>
+
+  <script src="config.js"></script>
+  <script>loadHLWidget({ mode: "restaurant" });</script>
+</body>
+</html>
